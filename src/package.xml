@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<package name="helloworldTimePy" displayName="Example demonstrating how to use timesteps with a python model" version="2.0.0" url="https://apexrms.github.io/helloworldEnhanced/">
+<package name="helloworldTimePy" displayName="Hello World Time (Python)" description = "Example demonstrating how to use timesteps with a python model" version="2.0.0" url="https://apexrms.github.io/helloworldEnhanced/">
 
 	<!--Scenario Datasheets-->
 
 	<!--Run Control-->
-	<dataSheet name="RunControl" displayName="Run Control" isSingleRow="True">
-		<column name="MinimumTimestep" displayName="Minimum Timestep" dataType="Integer" defaultValue="0" validationType="WholeNumber" validationCondition="GreaterEqual" formula1="0" />
-		<column name="MaximumTimestep" displayName="Maximum Timestep" dataType="Integer" defaultValue="10" validationType="WholeNumber" validationCondition="GreaterEqual" formula1="0" />
-	</dataSheet>
+	<dataSheet name="RunControl" displayName="Run Control" isRunControl="True" timestepTitle="Timestep" showMinIteration="False"/>
 
 	<!--Model Inputs-->
 	<dataSheet name="InputDatasheet" isSingleRow="True">
@@ -22,17 +19,25 @@
 		<column name="y" dataType="Double" displayName="Value for y" />
 	</dataSheet>
 
+	<!--Transformers-->
+
+	<transformer name="Main" displayName="Hello World Time (Python)" programName="Python" programArguments="model.py">
+		<dataSheet name="RunControl" type="Input"/>
+		<dataSheet name="InputDatasheet" type="Input"/>
+		<dataSheet name="OutputDatasheet" type="Output"/>
+	</transformer>
+
 	<!--Layouts-->
 
 	<!--Scenario Datafeeds Layout-->
 	<layout type="Scenario">
 		<item name="RunControl" />
-		<item name="InputDatafeed" />
-		<item name="OutputDatafeed" />
+		<item name="InputDatasheet" />
+		<item name="OutputDatasheet" />
 	</layout>
 
 	<!--Charts Layout-->
-	<layout name="Chart" configurationSheet="RunControl">
+	<layout type="Chart">
 		<item name="y" displayName="y" dataSheet="OutputDatasheet" column="y" />
 	</layout>
 
