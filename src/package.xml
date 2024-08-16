@@ -7,15 +7,13 @@
 	<dataSheet name="RunControl" displayName="Run Control" isRunControl="True" timestepTitle="Timestep" showMinIteration="False"/>
 
 	<!--Model Inputs-->
-	<dataSheet name="InputDatasheet" isSingleRow="True">
+	<dataSheet name="InputDatasheet"  displayName = "Inputs" isSingleRow="True">
 		<column name="m" dataType="Double" displayName="Value for m" />
 		<column name="b" dataType="Integer" displayName="Value for b" />
 	</dataSheet>
 
 	<!--Model Output-->
-	<dataSheet name="OutputDatasheet">
-		<column name="Iteration" dataType="Integer" isOptional="True" />
-		<column name="Timestep" dataType="Integer" />
+	<dataSheet name="OutputDatasheet" hasTimestep="True">
 		<column name="y" dataType="Double" displayName="Value for y" />
 	</dataSheet>
 
