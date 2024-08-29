@@ -4,16 +4,16 @@
 	<!--Scenario Datasheets-->
 
 	<!--Run Control-->
-	<dataSheet name="RunControl" displayName="Run Control" isRunControl="True" timestepTitle="Timestep" showMinIteration="False"/>
+	<dataSheet name="RunControl" displayName="Run Control" isRunControl="True" timestepTitle="Timestep" showMinIteration="False" showMaxIteration="False"/>
 
 	<!--Model Inputs-->
-	<dataSheet name="InputDatasheet"  displayName = "Inputs" isSingleRow="True">
+	<dataSheet name="InputDatasheet" displayName="Inputs" isSingleRow="True">
 		<column name="m" dataType="Double" displayName="Value for m" />
 		<column name="b" dataType="Integer" displayName="Value for b" />
 	</dataSheet>
 
 	<!--Model Output-->
-	<dataSheet name="OutputDatasheet" hasTimestep="True">
+	<dataSheet name="OutputDatasheet" displayName="Outputs" hasTimestep="True">
 		<column name="y" dataType="Double" displayName="Value for y" />
 	</dataSheet>
 
