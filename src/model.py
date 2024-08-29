@@ -1,5 +1,4 @@
 # Load SyncroSim python package
-from osgeo import gdal
 import pysyncrosim as ps
 
 # Load numpy and pandas
